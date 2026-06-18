@@ -1,0 +1,13 @@
+{
+  "name": "auna-automotive",
+  "version": "1.0.0",
+  "description": "AUNA — Premium Curated Luxury Automotive Showcase, Kano",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && cp -r data dist/data && cp -r assets/images dist/assets/images",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}

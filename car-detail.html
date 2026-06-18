@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Details | AUNA</title>
+  <meta name="description" content="View technical specifications, pricing, mileage, and features of this premium vehicle at AUNA Kano.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D4AF37'%3E%3Cpath d='M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ─── FLOATING PILL NAVBAR ─── -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div style="display: flex; flex-direction: column; line-height: 1;">
+          <span class="logo-text-main">AUNA</span>
+          <span class="logo-text-sub">AUTOMOTIVE</span>
+        </div>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="inventory.html" class="nav-link">Inventory</a>
+        <a href="about.html" class="nav-link">Ethos</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="tel:+2347045003128" class="nav-action-link">Concierge</a>
+        <a href="https://wa.me/2347045003128" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Inquire</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="inventory.html" class="mobile-link">Inventory</a>
+      <a href="about.html" class="mobile-link">Ethos</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+      <hr class="mobile-divider">
+      <a href="https://wa.me/2347045003128" class="btn btn-primary" target="_blank" rel="noopener">Concierge Channel</a>
+    </div>
+  </div>
+
+  <div class="navbar-spacer"></div>
+
+  <!-- ─── MAIN LAYOUT ─── -->
+  <main class="container section">
+    <div class="detail-layout" id="detail-layout-container">
+      
+      <!-- LEFT COLUMN: MEDIA & TECH SPECS -->
+      <div>
+        <!-- Hero main image -->
+        <img class="detail-hero-img scroll-fade" id="detail-main-img" src="" alt="Vehicle Showcase" fetchpriority="high">
+        
+        <!-- Thumbnail bar -->
+        <div class="detail-thumbs scroll-fade" id="detail-thumbs">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Badges & Title -->
+        <div class="detail-meta-row scroll-fade">
+          <span class="fleet-year" id="detail-year" style="font-size: 0.85rem; padding: 0.2rem 0.6rem; border: 1px solid rgba(var(--clr-accent-rgb), 0.2); border-radius: var(--radius-xs);">2026</span>
+          <span class="tag" id="detail-condition" style="background: rgba(255, 255, 255, 0.03); color: var(--clr-text-muted); border-color: var(--clr-border);">Foreign Used</span>
+          <span class="tag" id="detail-fuel">Petrol</span>
+          <div id="detail-tags" style="display: flex; gap: var(--space-xs); flex-wrap: wrap;"></div>
+        </div>
+
+        <h1 class="detail-title scroll-fade" id="detail-title">Loading Details...</h1>
+        
+        <!-- Description -->
+        <div class="glass-md scroll-fade" style="padding: var(--space-xl); margin-bottom: var(--space-xl);">
+          <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--clr-accent-light); margin-bottom: var(--space-sm);">Curator Overview</h3>
+          <p id="detail-description" style="font-size: 0.96rem; line-height: 1.8; color: var(--clr-text-muted);"></p>
+        </div>
+
+        <!-- Specs Table -->
+        <div class="specs-section scroll-fade">
+          <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--clr-accent-light); margin-bottom: var(--space-md);">Technical Specifications</h3>
+          <div class="specs-table" id="specs-table">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: STICKY CONTACT PANEL -->
+      <aside class="detail-contact-panel scroll-fade">
+        <div>
+          <span class="detail-price-label">Acquisition Value</span>
+          <div class="detail-price-row" style="border: none; margin-bottom: var(--space-md); padding-bottom: 0;">
+            <span class="detail-price" id="detail-price">₦0.0M</span>
+          </div>
+        </div>
+
+        <div style="margin: var(--space-xl) 0;">
+          <a href="#" id="btn-detail-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79 1.04h.007c4.368 0 7.927-3.559 7.931-7.928a7.86 7.86 0 0 0-2.33-5.688zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.202-.594-1.385-.658-.182-.066-.315-.1-.448.1-.134.2-.516.643-.633.776-.117.133-.233.15-.436.05-2.02-.998-3.342-2.247-4.116-3.54-.202-.347.202-.322.58-.108.34.19.38.225.43.325.05.1.025.19-.012.29-.037.1-.183.453-.274.674-.083.203-.17.17-.29.17-.12 0-.26-.007-.4-.007-.14 0-.36.053-.55.26-.19.206-.723.706-.723 1.724 0 1.02 1.48 2.005 1.685 2.274.206.27 2.91 4.441 7.05 6.223.985.424 1.754.678 2.355.869.99.313 1.892.268 2.604.161.792-.119 2.05-.838 2.338-1.65.287-.812.287-1.506.2-.165-.088-.1-.26-.2-.46-.3z"/></svg>
+            Inquire on WhatsApp
+          </a>
+          <a href="tel:+2347045003128" id="btn-detail-call" class="btn btn-call">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Call Concierge Agent
+          </a>
+        </div>
+
+        <div class="detail-dealer-info">
+          <div class="detail-dealer-name">AUNA Showroom Console</div>
+          <div class="detail-dealer-loc">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Kano, Kano State, Nigeria
+          </div>
+          <div style="font-size: 0.78rem; color: var(--clr-text-dim); margin-top: 8px; line-height: 1.5; letter-spacing: 0.02em;">
+            Hours: Monday – Saturday<br>
+            9:00 AM – 6:00 PM
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ─── MOBILE STICKY ACTION BAR ─── -->
+  <div class="mobile-action-bar">
+    <a href="#" id="btn-mobile-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+      WhatsApp Inquire
+    </a>
+    <a href="tel:+2347045003128" class="btn btn-outline">
+      Call Agent
+    </a>
+  </div>
+
+  <!-- ─── MINIMALIST FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-layout">
+        <div class="footer-brand scroll-fade">
+          <span class="logo-text-main">AUNA</span>
+          <p class="footer-copy">Premium Automotive Brokerage and Acquisition Group.</p>
+        </div>
+        <div class="footer-nav-block scroll-fade">
+          <span class="footer-heading">Index</span>
+          <a href="inventory.html">Inventory</a>
+          <a href="about.html">Our Ethos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-nav-block scroll-fade">
+          <span class="footer-heading">Kano Office</span>
+          <p class="footer-text">Kano, Kano State, Nigeria</p>
+          <p class="footer-text">Concierge: 0704 500 3128</p>
+        </div>
+      </div>
+      <div class="footer-legal scroll-fade">
+        <span>&copy; 2026 AUNA AUTOMOTIVE. ALL RIGHTS RESERVED.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/car-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://auna-automotive.vercel.app/sitemap.xml
+
+# Block build artifacts
+Disallow: /dist/
+Disallow: /node_modules/

@@ -1,0 +1,331 @@
+/* =============================================
+   AUNA AUTOMOTIVE — BASE DESIGN SYSTEM
+   Design Tokens, Resets, Typography
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ─── Premium Design Tokens ─── */
+:root {
+  /* Ultra-luxurious dark color space */
+  --clr-bg:          #050505; /* Deep rich pitch black */
+  --clr-bg-secondary: #0D0E12; /* Dark slate dark backdrop */
+  --clr-surface:     rgba(255, 255, 255, 0.035);
+  --clr-surface-md:  rgba(255, 255, 255, 0.07);
+  --clr-surface-lg:  rgba(255, 255, 255, 0.11);
+  --clr-border:      rgba(255, 255, 255, 0.07);
+  --clr-border-lg:   rgba(255, 255, 255, 0.14);
+
+  /* Gold & Champagne accents */
+  --clr-accent:      #D4AF37; /* Antique gold */
+  --clr-accent-rgb:  212, 175, 55;
+  --clr-accent-light:#F3E5AB; /* Champagne gold */
+  --clr-accent-dark: #8C6D1F;
+  --clr-accent-glow: rgba(212, 175, 55, 0.08);
+
+  /* Clean functional states */
+  --clr-text:        #FFFFFF; /* Crisp contrast white */
+  --clr-text-muted:  #9A9EAB; /* Soft grey */
+  --clr-text-dim:    #5B5D68; /* Low prominence dark grey */
+  --clr-white:       #FFFFFF;
+  
+  --clr-success:     #34D399;
+  --clr-error:       #F87171;
+
+  /* Typography */
+  --font-display:    'Outfit', sans-serif;
+  --font-body:       'Plus Jakarta Sans', sans-serif;
+
+  /* Padding & Spacing */
+  --space-xs:   0.3rem;
+  --space-sm:   0.6rem;
+  --space-md:   1.2rem;
+  --space-lg:   1.8rem;
+  --space-xl:   2.4rem;
+  --space-2xl:  3.6rem;
+  --space-3xl:  4.8rem;
+  --space-4xl:  7.2rem;
+
+  /* Border Radius */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   30px;
+  --radius-pill: 9999px;
+
+  /* Outer Glows & Blurs */
+  --blur-sm:   blur(10px);
+  --blur-md:   blur(20px);
+  --blur-lg:   blur(35px);
+
+  /* Transitions */
+  --transition-fast:   180ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-base:   350ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow:   600ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fluid:  800ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --shadow-sm:  0 4px 12px rgba(0, 0, 0, 0.7);
+  --shadow-md:  0 12px 40px rgba(0, 0, 0, 0.85);
+  --shadow-lg:  0 20px 80px rgba(0, 0, 0, 0.95);
+  --shadow-accent: 0 0 40px rgba(var(--clr-accent-rgb), 0.15);
+
+  /* Layout Widths */
+  --container-max: 1360px;
+  --nav-height: 84px;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--clr-bg);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.62;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ─── Typography ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--clr-text);
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+}
+
+h4 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 500;
+}
+
+p {
+  font-size: 0.98rem;
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+}
+
+/* ─── Layout Utilities ─── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 var(--space-md); }
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+@media (max-width: 768px) {
+  .section { padding: var(--space-2xl) 0; }
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: var(--space-md);
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--clr-accent);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--clr-text);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+.section-title span {
+  font-weight: 500;
+  background: linear-gradient(135deg, var(--clr-accent-light) 0%, var(--clr-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--clr-text-muted);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+/* ─── Custom Premium Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--clr-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--clr-border-lg);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-accent);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(var(--clr-accent-rgb), 0.25);
+  color: var(--clr-white);
+}
+
+/* ─── Focus States ─── */
+:focus-visible {
+  outline: 1px solid var(--clr-accent);
+  outline-offset: 4px;
+}
+
+/* ─── Motion Management ─── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Scroll Reveal Animation ─── */
+/* Elements with .scroll-fade start hidden and reveal when .visible is added */
+.scroll-fallback-init {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-fallback-init.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for sibling elements */
+.scroll-fallback-init:nth-child(2) { transition-delay: 0.07s; }
+.scroll-fallback-init:nth-child(3) { transition-delay: 0.14s; }
+.scroll-fallback-init:nth-child(4) { transition-delay: 0.21s; }
+.scroll-fallback-init:nth-child(5) { transition-delay: 0.28s; }
+.scroll-fallback-init:nth-child(6) { transition-delay: 0.35s; }
+
+/* Feature cards grid items */
+.feature-card,
+.fleet-card,
+.team-card,
+.stat-cell {
+  transition: border-color var(--transition-base),
+              transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+/* ─── Feature / Ethos Cards ─── */
+.feature-card {
+  padding: var(--space-xl);
+  background: rgba(13, 14, 18, 0.4);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+}
+.feature-card:hover {
+  border-color: rgba(var(--clr-accent-rgb), 0.35);
+  transform: translateY(-3px);
+}
+.feature-desc {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+}
+
+/* ─── Section Header Utility ─── */
+.section-header.centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-header.centered .section-subtitle {
+  text-align: center;
+  margin: 0 auto;
+}
+
