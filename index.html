@@ -1,235 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AUNA — Premium Curated Automotive Showcase</title>
-  <meta name="description" content="Kano's premier destination for high-end luxury vehicles. Curated foreign-used SUVs, executive sedans, and bespoke automotive procurement.">
-  
-  <!-- Typography & Structural Stylesheets -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-
-  <!-- Favicon Asset -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D4AF37'%3E%3Cpath d='M19 6H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-1 9H6v-6h12v6z'/%3E%3C/svg%3E">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUNA Automotive - Premium Luxury Cars</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- ─── FLOATING PILL NAVBAR ─── -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="nav-logo">
-        <div style="display: flex; flex-direction: column; line-height: 1;">
-          <span class="logo-text-main">AUNA</span>
-          <span class="logo-text-sub">AUTOMOTIVE</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">AUNA</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#catalog" class="nav-link">Catalog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
-      </a>
-      
-      <div class="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="inventory.html" class="nav-link">Inventory</a>
-        <a href="about.html" class="nav-link">Ethos</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </div>
+    </nav>
 
-      <div class="nav-actions">
-        <a href="tel:+2347045003128" class="nav-action-link">Concierge</a>
-        <a href="https://wa.me/2347045003128" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Inquire</a>
-      </div>
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Premium Luxury Automobiles</h1>
+            <p class="hero-subtitle">Discover curated selection of world-class vehicles in Kano</p>
+            <button class="cta-button" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})">Explore Collection</button>
+        </div>
+    </header>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <!-- Featured Section -->
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Vehicles</h2>
+            <div class="featured-grid">
+                <div class="featured-card large">
+                    <div class="featured-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <span class="badge">Featured</span>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Toyota Land Cruiser 2022</h3>
+                        <p class="price">₦85,000,000</p>
+                        <p class="specs-preview">309 hp • 7 Seater • 4WD</p>
+                        <button class="view-btn" onclick="showCarDetail('001')">View Details</button>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <div class="featured-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <span class="badge">Popular</span>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Mercedes-Benz GLE 450</h3>
+                        <p class="price">₦75,000,000</p>
+                        <p class="specs-preview">362 hp • AWD</p>
+                        <button class="view-btn" onclick="showCarDetail('002')">View Details</button>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <div class="featured-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <span class="badge">Luxury</span>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Range Rover Sport HSE</h3>
+                        <p class="price">₦95,000,000</p>
+                        <p class="specs-preview">395 hp • Nearly New</p>
+                        <button class="view-btn" onclick="showCarDetail('004')">View Details</button>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <div class="featured-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <span class="badge">V8 Power</span>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Lexus LX 570</h3>
+                        <p class="price">₦65,000,000</p>
+                        <p class="specs-preview">383 hp • 8 Seater</p>
+                        <button class="view-btn" onclick="showCarDetail('003')">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <h2 class="section-title">Complete Catalog</h2>
+            
+            <!-- Filters -->
+            <div class="filters">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by make or model..." onkeyup="filterCars()">
+                <div class="filter-group">
+                    <select id="bodyTypeFilter" class="filter-select" onchange="filterCars()">
+                        <option value="">All Body Types</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Sedan">Sedan</option>
+                    </select>
+                    <select id="priceFilter" class="filter-select" onchange="filterCars()">
+                        <option value="">All Prices</option>
+                        <option value="budget">Under ₦40M</option>
+                        <option value="mid">₦40M - ₦70M</option>
+                        <option value="premium">Above ₦70M</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Car Grid -->
+            <div id="carGrid" class="car-grid">
+                <!-- Cars will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Premium Vehicles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5★</div>
+                <div class="stat-label">Avg. Rating</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Available</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Kano, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+234 XXX XXXX XXX</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@auna.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AUNA Automotive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Car Detail Modal -->
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCarModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Car details will be populated by JavaScript -->
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- Mobile Overlay Navigation -->
-  <div class="nav-mobile" id="navMobile">
-    <div class="nav-mobile-inner">
-      <a href="index.html" class="mobile-link active">Home</a>
-      <a href="inventory.html" class="mobile-link">Inventory</a>
-      <a href="about.html" class="mobile-link">Ethos</a>
-      <a href="contact.html" class="mobile-link">Contact</a>
-      <hr class="mobile-divider">
-      <a href="https://wa.me/2347045003128" class="btn btn-primary" target="_blank" rel="noopener">Concierge Channel</a>
-    </div>
-  </div>
-
-  <!-- ─── LUXURY HERO ARCHITECTURE ─── -->
-  <header class="hero">
-    <div class="hero-canvas">
-      <img src="assets/images/hero-bg.png" alt="" fetchpriority="high" class="hero-asset-img">
-    </div>
-    
-    <div class="container hero-layout">
-      <div class="hero-meta-block scroll-fade">
-        <span class="hero-tagline">Kano, Nigeria</span>
-        <h1 class="hero-headline">
-          The Luxury Standard. <br><span class="muted">Curated for the Discerning.</span>
-        </h1>
-        <p class="hero-paragraph">
-          Bespoke automotive procurement. Access an elite fleet of foreign-used luxury SUVs and executive transport tailored explicitly for Nigerian road dynamics.
-        </p>
-        <div class="hero-button-group">
-          <a href="inventory.html" class="btn btn-primary">Explore Fleet</a>
-          <a href="https://wa.me/2347045003128" class="btn btn-outline" target="_blank" rel="noopener">Private Consultation</a>
-        </div>
-      </div>
-
-      <div class="hero-display scroll-fade">
-        <img class="hero-display-img" id="heroCarImg" src="assets/images/car-range-rover.png" alt="Featured Range Rover Sport HSE" fetchpriority="high">
-      </div>
-    </div>
-  </header>
-
-  <!-- ─── PERFORMANCE METRICS ─── -->
-  <section class="stats-panel">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-cell scroll-fade">
-          <span class="stat-value" data-target="150" data-suffix="+">0</span>
-          <span class="stat-caption">Acquisitions Delivered</span>
-        </div>
-        <div class="stat-cell scroll-fade">
-          <span class="stat-value" data-target="5" data-suffix="">0</span>
-          <span class="stat-caption">Years Performance Track</span>
-        </div>
-        <div class="stat-cell scroll-fade">
-          <span class="stat-value" data-target="100" data-suffix="%">0</span>
-          <span class="stat-caption">Verified History / Mileage</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── THE CURATED SHOWROOM (GRID) ─── -->
-  <section class="showroom-section">
-    <div class="container">
-      <div class="showroom-header">
-        <div class="title-wrap scroll-fade">
-          <span class="section-tag">CURRENT AVAILABILITY</span>
-          <h2 class="section-title">Featured Showroom</h2>
-        </div>
-        <a href="inventory.html" class="text-link scroll-fade">View Full Fleet Index →</a>
-      </div>
-
-      <div class="showroom-grid">
-        <!-- Collection Item 1 -->
-        <article class="fleet-card scroll-fade" onclick="window.location.href='car-detail.html?id=004'">
-          <div class="fleet-card-media">
-            <img src="assets/images/car-range-rover.png" alt="Range Rover Sport HSE" loading="lazy">
-          </div>
-          <div class="fleet-card-details">
-            <div class="fleet-card-header">
-              <span class="fleet-year">2022</span>
-              <h3 class="fleet-title">Range Rover Sport HSE</h3>
-            </div>
-            <div class="fleet-specs">
-              <span>Automatic</span>
-              <span class="spec-separator">•</span>
-              <span>8,500 km</span>
-              <span class="spec-separator">•</span>
-              <span>Foreign Used</span>
-            </div>
-            <div class="fleet-footer">
-              <span class="fleet-price">₦95.0M</span>
-              <span class="fleet-action-text">View Specification</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Collection Item 2 -->
-        <article class="fleet-card scroll-fade" onclick="window.location.href='car-detail.html?id=001'">
-          <div class="fleet-card-media">
-            <img src="assets/images/car-land-cruiser.png" alt="Toyota Land Cruiser V6" loading="lazy">
-          </div>
-          <div class="fleet-card-details">
-            <div class="fleet-card-header">
-              <span class="fleet-year">2022</span>
-              <h3 class="fleet-title">Toyota Land Cruiser LC300</h3>
-            </div>
-            <div class="fleet-specs">
-              <span>Automatic</span>
-              <span class="spec-separator">•</span>
-              <span>12,000 km</span>
-              <span class="spec-separator">•</span>
-              <span>Foreign Used</span>
-            </div>
-            <div class="fleet-footer">
-              <span class="fleet-price">₦85.0M</span>
-              <span class="fleet-action-text">View Specification</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Collection Item 3 -->
-        <article class="fleet-card scroll-fade" onclick="window.location.href='car-detail.html?id=002'">
-          <div class="fleet-card-media">
-            <img src="assets/images/car-mercedes-gle.png" alt="Mercedes-Benz GLE 450" loading="lazy">
-          </div>
-          <div class="fleet-card-details">
-            <div class="fleet-card-header">
-              <span class="fleet-year">2021</span>
-              <h3 class="fleet-title">Mercedes-Benz GLE 450</h3>
-            </div>
-            <div class="fleet-specs">
-              <span>Automatic</span>
-              <span class="spec-separator">•</span>
-              <span>18,000 km</span>
-              <span class="spec-separator">•</span>
-              <span>Foreign Used</span>
-            </div>
-            <div class="fleet-footer">
-              <span class="fleet-price">₦75.0M</span>
-              <span class="fleet-action-text">View Specification</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── DIRECT BRAND INQUIRY CTA ─── -->
-  <section class="inquiry-cta">
-    <div class="container scroll-fade">
-      <h2 class="inquiry-title">Begin Your Acquisition Process</h2>
-      <p class="inquiry-desc">Connect with our sales consultants for live vehicle walkthroughs, structural specs, and customs validation documents.</p>
-      <div class="inquiry-actions">
-        <a href="https://wa.me/2347045003128" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Secure Channel (WhatsApp)</a>
-        <a href="tel:+2347045003128" class="btn btn-outline btn-lg">Direct Line</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── MINIMALIST FOOTER ─── -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-layout">
-        <div class="footer-brand scroll-fade">
-          <span class="logo-text-main">AUNA</span>
-          <p class="footer-copy">Premium Automotive Brokerage and Acquisition Group.</p>
-        </div>
-        <div class="footer-nav-block scroll-fade">
-          <span class="footer-heading">Index</span>
-          <a href="inventory.html">Inventory</a>
-          <a href="about.html">Our Ethos</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-nav-block scroll-fade">
-          <span class="footer-heading">Kano Office</span>
-          <p class="footer-text">Kano, Kano State, Nigeria</p>
-          <p class="footer-text">Concierge: 0704 500 3128</p>
-        </div>
-      </div>
-      <div class="footer-legal scroll-fade">
-        <span>&copy; 2026 AUNA AUTOMOTIVE. ALL RIGHTS RESERVED.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script type="module" src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
